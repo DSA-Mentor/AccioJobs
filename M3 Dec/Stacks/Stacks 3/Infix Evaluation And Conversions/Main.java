@@ -3,27 +3,34 @@ import java.util.*;
 
 public class Main {
 
-  public static void main(String[] args) throws Exception {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    String exp = br.readLine();
-    Solution ob =new Solution();
-    ob.evaluate(exp);
-  }
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String exp = br.readLine();
+        Solution ob = new Solution();
+        ob.evaluate(exp);
+    }
 }
 
 class Solution {
     // more the return value, heigher the precedence
     public int precedence(char o) {
-        if (o == '/' || o == '*') return 2;
-        else if (o == '+' || o == '-') return 1;
-        else return 0;
+        if (o == '/' || o == '*')
+            return 2;
+        else if (o == '+' || o == '-')
+            return 1;
+        else
+            return 0;
     }
 
     public int eval(int v1, char o, int v2) {
-        if (o == '/') return v1 / v2;
-        else if (o == '*') return v1 * v2;
-        else if (o == '+') return v1 + v2;
-        else return v1 - v2;
+        if (o == '/')
+            return v1 / v2;
+        else if (o == '*')
+            return v1 * v2;
+        else if (o == '+')
+            return v1 + v2;
+        else
+            return v1 - v2;
     }
 
     public void solve(String exp) {
@@ -35,7 +42,7 @@ class Solution {
 
         for (int i = 0; i < exp.length(); i++) {
             char ch = exp.charAt(i);
-            
+
             if (ch == '(') {
                 opr.push(ch);
             } else if (ch >= '0' && ch <= '9') {
@@ -96,7 +103,7 @@ class Solution {
 
         for (int i = 0; i < exp.length(); i++) {
             char ch = exp.charAt(i);
-            
+
             if (ch == '(') {
                 opr.push(ch);
             } else if (ch >= '0' && ch <= '9') {
@@ -156,7 +163,7 @@ class Solution {
         System.out.println(post.peek());
         System.out.println(pre.peek());
     }
-    
+
     public void evaluate(String exp) {
         // Write code here
 
@@ -164,4 +171,4 @@ class Solution {
 
         convert(exp);
     }
-}               
+}

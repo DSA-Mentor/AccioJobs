@@ -1,8 +1,10 @@
 import java.util.*;
 import java.io.*;
+
 class Node {
     int data;
     Node left, right;
+
     Node(int key) {
         data = key;
         left = right = null;
@@ -40,7 +42,7 @@ class Solution {
         if (psi > pei || isi > iei) {
             return null;
         }
-        
+
         Node root = new Node(preorder[psi]);
         int LSTCount = 0;
         int i = isi;
@@ -56,11 +58,11 @@ class Solution {
         root.right = construct(inorder, i + 1, iei, preorder, psi + LSTCount + 1, pei);
 
         return root;
-        
+
     }
-    
+
     public static Node buildTree(int inorder[], int preorder[], int n) {
-        //Your code here 
+        // Your code here
         return construct(inorder, 0, inorder.length - 1, preorder, 0, preorder.length - 1);
     }
 }

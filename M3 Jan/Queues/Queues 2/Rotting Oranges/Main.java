@@ -3,32 +3,33 @@ import java.lang.*;
 import java.io.*;
 
 public class Main {
-    public static void main (String[] args) throws IOException {
-		Scanner sc = new Scanner(System.in);
-	    int n = sc.nextInt();
-	    int m = sc.nextInt();
-	    int [][] arr= new int[n][m];
-	    for(int i = 0; i < n; i++){
-	        for(int j = 0;j < m; j++) {
-	            arr[i][j] = sc.nextInt();
-	        }
-	    }
-	    Solution obj = new Solution();
-	        
-	    System.out.println(obj.orangesRotting(arr));
-	}
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] arr = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        Solution obj = new Solution();
+
+        System.out.println(obj.orangesRotting(arr));
+    }
 }
-class Solution {   
+
+class Solution {
     static class Pair {
         int row;
         int col;
 
-        Pair (int row, int col) {
+        Pair(int row, int col) {
             this.row = row;
             this.col = col;
         }
     }
-        
+
     public static int orangesRotting(int[][] grid) {
         // write your code here
         Queue<Pair> que = new ArrayDeque<>();

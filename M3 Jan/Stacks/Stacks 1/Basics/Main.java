@@ -11,7 +11,7 @@ class Main {
         st.push(40);
         st.push(5);
 
-        // get topmost element 
+        // get topmost element
         System.out.println("topmost element: " + st.peek());
 
         // size of the stacj
@@ -28,7 +28,7 @@ class Main {
 
         // experiment
         Stack st2 = new Stack<>();
-        
+
         st2.push(10);
         st2.push("ritik");
 

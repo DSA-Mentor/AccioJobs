@@ -47,7 +47,8 @@ public class Main {
 
         printMap(myMap);
 
-        // getOrDefault -> try to get value against this key, else return a default value
+        // getOrDefault -> try to get value against this key, else return a default
+        // value
         // System.out.println(myMap.getOrDefault("banana", 23));
 
         // add 7 more oranges

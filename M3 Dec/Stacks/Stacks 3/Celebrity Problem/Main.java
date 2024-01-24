@@ -1,22 +1,21 @@
 import java.io.*;
-import java.util.*; 
+import java.util.*;
 
-class Main{
-    public static void main(String args[]) throws IOException { 
+class Main {
+    public static void main(String args[]) throws IOException {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         int M[][] = new int[N][N];
-        for(int i=0; i<N; i++)
-            for(int j=0; j<N; j++)
+        for (int i = 0; i < N; i++)
+            for (int j = 0; j < N; j++)
                 M[i][j] = sc.nextInt();
-        System.out.println(new Solution().findCelebrity(M,N));
-    } 
-} 
-class Solution
-{ 
+        System.out.println(new Solution().findCelebrity(M, N));
+    }
+}
+
+class Solution {
     // TC: O(N), SC: O(N)
-    int findCelebrity(int M[][], int n)
-    {
+    int findCelebrity(int M[][], int n) {
         Stack<Integer> possibleCelebs = new Stack();
         for (int i = 0; i < n; i++) {
             possibleCelebs.push(i);

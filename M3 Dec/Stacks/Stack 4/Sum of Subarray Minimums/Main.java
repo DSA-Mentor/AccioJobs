@@ -2,85 +2,85 @@ import java.io.*;
 import java.util.*;
 
 class Solution {
- //    public int[] nextSmallerElementOnLeftIndexwise(int[] arr, int n) {
- //        // Stack: people looking for there nseli
- //        Stack<Integer> st = new Stack<>();
+    // public int[] nextSmallerElementOnLeftIndexwise(int[] arr, int n) {
+    // // Stack: people looking for there nseli
+    // Stack<Integer> st = new Stack<>();
 
- //        int[] nseli = new int[n];
+    // int[] nseli = new int[n];
 
- //        // move from right to left
- //        for (int i = n - 1; i >= 0; i--) {
- //            int ele = arr[i];
+    // // move from right to left
+    // for (int i = n - 1; i >= 0; i--) {
+    // int ele = arr[i];
 
- //            while (st.size() > 0 && ele < arr[st.peek()]) {
- //                int idx = st.pop();
- //                nseli[idx] = i;
- //            }
+    // while (st.size() > 0 && ele < arr[st.peek()]) {
+    // int idx = st.pop();
+    // nseli[idx] = i;
+    // }
 
- //            st.push(i);
- //        }
+    // st.push(i);
+    // }
 
- //        while (st.size() > 0) {
- //            int idx = st.pop();
- //            nseli[idx] = -1;
- //        }
+    // while (st.size() > 0) {
+    // int idx = st.pop();
+    // nseli[idx] = -1;
+    // }
 
- //        return nseli;
- //    }
+    // return nseli;
+    // }
 
- //    public int[] nextSmallerElementOnRightIndexwise(int[] arr, int n) {
- //        // Stack: people looking for there nseri
- //        Stack<Integer> st = new Stack<>();
+    // public int[] nextSmallerElementOnRightIndexwise(int[] arr, int n) {
+    // // Stack: people looking for there nseri
+    // Stack<Integer> st = new Stack<>();
 
- //        int[] nseri = new int[n];
+    // int[] nseri = new int[n];
 
- //        // move from right to left
- //        for (int i = 0; i < n; i++) {
- //            int ele = arr[i];
+    // // move from right to left
+    // for (int i = 0; i < n; i++) {
+    // int ele = arr[i];
 
- //            while (st.size() > 0 && ele <= arr[st.peek()]) {
- //                int idx = st.pop();
- //                nseri[idx] = i;
- //            }
+    // while (st.size() > 0 && ele <= arr[st.peek()]) {
+    // int idx = st.pop();
+    // nseri[idx] = i;
+    // }
 
- //            st.push(i);
- //        }
+    // st.push(i);
+    // }
 
- //        while (st.size() > 0) {
- //            int idx = st.pop();
- //            nseri[idx] = n;
- //        }
+    // while (st.size() > 0) {
+    // int idx = st.pop();
+    // nseri[idx] = n;
+    // }
 
- //        return nseri;
- //    }
+    // return nseri;
+    // }
 
- //    long mod = 1000000007;
-    
-	// public long minSubarraySum(int n, int arr[]) {
-	// 	// write code here
+    // long mod = 1000000007;
 
- //        // Step 1: calculate nseli
- //        int[] nseli = nextSmallerElementOnLeftIndexwise(arr, n);
-        
- //        // Step 2: calculate nseri
- //        int[] nseri = nextSmallerElementOnRightIndexwise(arr, n);
+    // public long minSubarraySum(int n, int arr[]) {
+    // // write code here
 
- //        // Step 3: calc sum, (i - nseli[i]) * (nseri[i] - i) * arr[i]
- //        long sum = 0;
- //        for (int i = 0; i < n; i++) {
- //            long width = (((i - nseli[i]) % mod) * ((nseri[i] - i) % mod)) % mod;
- //            sum = (((long)(width * arr[i]) % mod) + sum) % mod;
- //        }
+    // // Step 1: calculate nseli
+    // int[] nseli = nextSmallerElementOnLeftIndexwise(arr, n);
 
- //        return sum % mod;
-	// }
+    // // Step 2: calculate nseri
+    // int[] nseri = nextSmallerElementOnRightIndexwise(arr, n);
+
+    // // Step 3: calc sum, (i - nseli[i]) * (nseri[i] - i) * arr[i]
+    // long sum = 0;
+    // for (int i = 0; i < n; i++) {
+    // long width = (((i - nseli[i]) % mod) * ((nseri[i] - i) % mod)) % mod;
+    // sum = (((long)(width * arr[i]) % mod) + sum) % mod;
+    // }
+
+    // return sum % mod;
+    // }
 
     public long minSubarraySum(int n, int arr[]) {
-		// write code here
+        // write code here
         long mod = 1000000007;
-        
+
         Stack<Integer> st = new Stack<>();
-        
+
         long sum = 0;
         for (int i = 0; i < n; i++) {
             int ele = arr[i];
@@ -113,7 +113,7 @@ class Solution {
         }
 
         return sum % mod;
-	}
+    }
 }
 
 public class Main {
@@ -121,10 +121,10 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
         int a[] = new int[n];
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             a[i] = input.nextInt();
         }
-		Solution Obj = new Solution();
-        System.out.println(Obj.minSubarraySum(n,a));
+        Solution Obj = new Solution();
+        System.out.println(Obj.minSubarraySum(n, a));
     }
 }

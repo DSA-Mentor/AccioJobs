@@ -1,8 +1,8 @@
 import java.util.*;
 
 class Solution {
-    public static int maximumArea(int hist[], int n){
-		//Your code here 
+	public static int maximumArea(int hist[], int n) {
+		// Your code here
 		int maxArea = 0;
 
 		// people looking nsel
@@ -45,41 +45,41 @@ class Solution {
 		}
 
 		return maxArea;
-    }
+	}
 
-    public static int maxDiggingArea(int[][] mat, int n, int m) {
-        //Write your code here
-        for (int r = 1; r < n; r++) {
-            for (int c = 0; c < m; c++) {
-                if (mat[r][c] != 0) {
-                    mat[r][c] += mat[r - 1][c];
-                }
-            }
-        }
+	public static int maxDiggingArea(int[][] mat, int n, int m) {
+		// Write your code here
+		for (int r = 1; r < n; r++) {
+			for (int c = 0; c < m; c++) {
+				if (mat[r][c] != 0) {
+					mat[r][c] += mat[r - 1][c];
+				}
+			}
+		}
 
-        int maxArea = 0;
-        for (int r = 0; r < n; r++) {
-            int area = maximumArea(mat[r], m);
-            maxArea = Math.max(maxArea, area);
-        }
+		int maxArea = 0;
+		for (int r = 0; r < n; r++) {
+			int area = maximumArea(mat[r], m);
+			maxArea = Math.max(maxArea, area);
+		}
 
-        return maxArea;
-    }
+		return maxArea;
+	}
 }
 
 class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int arr[][] = new int[n][m];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++)
-                arr[i][j] = sc.nextInt();
-        }
-        System.out.println(Solution.maxDiggingArea(arr, n, m));
-        sc.close();
-    }
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		int arr[][] = new int[n][m];
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++)
+				arr[i][j] = sc.nextInt();
+		}
+		System.out.println(Solution.maxDiggingArea(arr, n, m));
+		sc.close();
+	}
 
 }

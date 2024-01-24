@@ -1,9 +1,8 @@
 import java.util.*;
 
-class Solution{
-    public int findPeak(int arr[], int n)
-    {
-        //Write your code here
+class Solution {
+    public int findPeak(int arr[], int n) {
+        // Write your code here
         int lo = 0;
         int hi = n - 1;
 
@@ -41,44 +40,39 @@ class Solution{
     }
 }
 
-class Main{
-	public static void main(String[] args){
-		try (Scanner sc = new Scanner(System.in)) {
-			int t=sc.nextInt();
-			while(t>0){
-				int n=sc.nextInt();
-				int []A=new int[n];
-				for(int i=0;i<n;i++){
-					A[i]=sc.nextInt();
-				}
-				Solution ob =new Solution();
-				int ans = ob.findPeak(A,n);
-                if(ans==0){
-                    if(A[ans]>A[ans+1]){
+class Main {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int t = sc.nextInt();
+            while (t > 0) {
+                int n = sc.nextInt();
+                int[] A = new int[n];
+                for (int i = 0; i < n; i++) {
+                    A[i] = sc.nextInt();
+                }
+                Solution ob = new Solution();
+                int ans = ob.findPeak(A, n);
+                if (ans == 0) {
+                    if (A[ans] > A[ans + 1]) {
                         System.out.println("true");
+                    } else {
+                        System.out.println("false");
                     }
-                    else{
-                       System.out.println("false");    
-                    }
-                }
-                else if(ans==n-1){
-                    if(A[ans]>A[ans-1]){
-                        System.out.println("true");                        
-                    }
-                    else{
-                        System.out.println("false");                        
-                    }
-                }
-                else{
-                    if(A[ans]>A[ans+1] && A[ans]>A[ans-1]){
+                } else if (ans == n - 1) {
+                    if (A[ans] > A[ans - 1]) {
                         System.out.println("true");
+                    } else {
+                        System.out.println("false");
                     }
-                    else{
-                        System.out.println("false");                        
+                } else {
+                    if (A[ans] > A[ans + 1] && A[ans] > A[ans - 1]) {
+                        System.out.println("true");
+                    } else {
+                        System.out.println("false");
                     }
                 }
-				t--;
-			}
-		}
-	}
+                t--;
+            }
+        }
+    }
 }

@@ -22,11 +22,11 @@ class Solution {
 
         return dayNum <= B;
     }
-    
+
     public static long solve(int[] A, int B) {
-        //Write your code here     
+        // Write your code here
         long lo = 1;
-        long hi = (long)1e14;
+        long hi = (long) 1e14;
 
         long pans = -1;
         while (lo <= hi) {
@@ -45,14 +45,14 @@ class Solution {
 }
 
 class Main {
-    public static void main (String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] A = new int[n];
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             A[i] = sc.nextInt();
-		}
+        }
         int B = sc.nextInt();
-        System.out.println(Solution.solve(A,B));
-	}
+        System.out.println(Solution.solve(A, B));
+    }
 }

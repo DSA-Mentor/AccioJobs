@@ -3,7 +3,7 @@ import java.util.*;
 
 class Solution {
     public boolean arrayPairs(int[] arr, int k) {
-    	// create a freq map for rem
+        // create a freq map for rem
         HashMap<Integer, Integer> remFreq = new HashMap<>();
         for (int num : arr) {
             int rem = num % k;
@@ -18,7 +18,7 @@ class Solution {
                     return false;
                 }
             }
-            
+
             // compRem + rem = k
             int comRem = k - rem;
             if (remFreq.containsKey(comRem) == false) {
@@ -35,17 +35,17 @@ class Solution {
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n,k;
+        int n, k;
         n = sc.nextInt();
-		k = sc.nextInt();
+        k = sc.nextInt();
         int arr[] = new int[n];
-        for(int i=0;i<n;i++)
+        for (int i = 0; i < n; i++)
             arr[i] = sc.nextInt();
         Solution Obj = new Solution();
-        if(Obj.arrayPairs(arr,k)){
-			System.out.println("true");
-		}else{
-			System.out.println("false");
-		}
+        if (Obj.arrayPairs(arr, k)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
     }
 }

@@ -4,12 +4,13 @@ import java.util.*;
 class Solution {
 
     // Faith: returns number of a employees under a manager
-    public int getAllEmpUnderMe(String mngr, HashMap<String, ArrayList<String>> directReportees, TreeMap<String, Integer> map) {
+    public int getAllEmpUnderMe(String mngr, HashMap<String, ArrayList<String>> directReportees,
+            TreeMap<String, Integer> map) {
         if (directReportees.containsKey(mngr) == false) {
             map.put(mngr, 0);
             return 0;
         }
-        
+
         int totalEmployees = 0;
 
         for (String direct : directReportees.get(mngr)) {
@@ -21,9 +22,9 @@ class Solution {
 
         return totalEmployees;
     }
-    
+
     public void EmpUnderManager(Map<String, String> emp) {
-		// create a hashmap for direct reportees, and also identify CEO
+        // create a hashmap for direct reportees, and also identify CEO
         HashMap<String, ArrayList<String>> directReportees = new HashMap<>();
         String CEO = "";
 
@@ -46,7 +47,7 @@ class Solution {
         for (String mngr : map.keySet()) {
             System.out.println(mngr + " " + map.get(mngr));
         }
-	}
+    }
 }
 
 public class Main {
@@ -54,11 +55,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n;
         n = sc.nextInt();
-        Map<String,String> emp = new HashMap<String, String>();
-        for(int i=0;i<n;++i){
-			emp.put(sc.next(),sc.next());
+        Map<String, String> emp = new HashMap<String, String>();
+        for (int i = 0; i < n; ++i) {
+            emp.put(sc.next(), sc.next());
         }
         Solution Obj = new Solution();
-        Obj.EmpUnderManager(emp); 
+        Obj.EmpUnderManager(emp);
     }
 }

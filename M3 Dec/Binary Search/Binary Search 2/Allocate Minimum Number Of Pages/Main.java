@@ -21,11 +21,11 @@ class Solution {
 
     // TC: O(N*log(N)), SC: O(1)
     public long MinimumPages(int[] A, int B) {
-        //Write your code here
+        // Write your code here
         if (B > A.length) {
             return -1;
         }
-        
+
         long lo = 0;
         long hi = 0;
 
@@ -51,18 +51,17 @@ class Solution {
 }
 
 class Main {
-    
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-	    
-	    int N = sc.nextInt();
-	    int B = sc.nextInt();
+
+        int N = sc.nextInt();
+        int B = sc.nextInt();
         int[] A = new int[N];
-        for(int i=0;i<N;i++)
+        for (int i = 0; i < N; i++)
             A[i] = sc.nextInt();
 
-        Solution Obj = new Solution(); 
-        System.out.println(Obj.MinimumPages(A,B));
-	}
+        Solution Obj = new Solution();
+        System.out.println(Obj.MinimumPages(A, B));
+    }
 }

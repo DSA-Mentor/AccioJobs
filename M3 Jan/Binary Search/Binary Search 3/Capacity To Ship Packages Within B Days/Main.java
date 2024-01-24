@@ -18,7 +18,7 @@ class Solution {
 
         return dayNum <= B;
     }
-    
+
     public static long solve(int[] A, int B) {
         long lo = 0;
         long hi = 0;
@@ -44,14 +44,14 @@ class Solution {
 }
 
 class Main {
-    public static void main (String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] A = new int[n];
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             A[i] = sc.nextInt();
-		}
+        }
         int B = sc.nextInt();
         System.out.println(Solution.solve(A, B));
-	}
+    }
 }

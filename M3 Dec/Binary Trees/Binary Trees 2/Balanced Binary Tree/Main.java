@@ -23,18 +23,20 @@ public class Main {
             root = getNode(data);
             return root;
         }
-        if (data <= root.data) root.left =
-            LevelOrder(root.left, data);
-        else root.right =
-            LevelOrder(root.right, data);
+        if (data <= root.data)
+            root.left = LevelOrder(root.left, data);
+        else
+            root.right = LevelOrder(root.right, data);
         return root;
     }
 
     static Node constructBst(int arr[], int n) {
-        if (n == 0) return null;
+        if (n == 0)
+            return null;
         Node root = null;
 
-        for (int i = 0; i < n; i++) root = LevelOrder(root, arr[i]);
+        for (int i = 0; i < n; i++)
+            root = LevelOrder(root, arr[i]);
 
         return root;
     }
@@ -43,7 +45,7 @@ public class Main {
         boolean isBalanced;
         int height;
 
-        Pair (boolean isBalanced, int height) {
+        Pair(boolean isBalanced, int height) {
             this.isBalanced = isBalanced;
             this.height = height;
         }
@@ -56,7 +58,7 @@ public class Main {
         if (root == null) {
             return new Pair(true, 0);
         }
-        
+
         // get isBalanced and height of LST
         Pair LST = helperFun(root.left);
 
@@ -75,7 +77,7 @@ public class Main {
 
         if (LST.isBalanced == false || RST.isBalanced == false || isRootBalanced == false) {
             return new Pair(false, height);
-        } 
+        }
 
         return new Pair(true, height);
     }
@@ -89,12 +91,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] tree = new int[n];
-        for (int i = 0; i < n; i++) tree[i] = sc.nextInt();
+        for (int i = 0; i < n; i++)
+            tree[i] = sc.nextInt();
         sc.close();
         Node root = constructBst(tree, n);
-        if (isBalanced(root)) System.out.println("true");
-        else System.out.println(
-            "false"
-        );
+        if (isBalanced(root))
+            System.out.println("true");
+        else
+            System.out.println(
+                    "false");
     }
 }

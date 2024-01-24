@@ -3,21 +3,21 @@ import java.lang.*;
 import java.io.*;
 
 class Main {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-	    
+
         int N = sc.nextInt();
-    	
+
         int[] A = new int[N];
-    	for(int i = 0; i < N; i++) {
+        for (int i = 0; i < N; i++) {
             A[i] = sc.nextInt();
         }
-        
+
         int B = sc.nextInt();
-        
+
         Solution ob = new Solution();
-        System.out.println(ob.search(A,B));
-	}
+        System.out.println(ob.search(A, B));
+    }
 }
 
 class Solution {

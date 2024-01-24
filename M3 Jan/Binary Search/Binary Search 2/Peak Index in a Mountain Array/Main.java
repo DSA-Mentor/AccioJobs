@@ -31,7 +31,7 @@ class Solution {
                 } else {
                     // left is not increasing
                     hi = mid - 1;
-                }   
+                }
             }
         }
 
@@ -45,7 +45,7 @@ public class Main {
         int n;
         n = sc.nextInt();
         int arr1[] = new int[n];
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
             arr1[i] = sc.nextInt();
         Solution Obj = new Solution();
         int result = Obj.peakIndexInMountainArray(arr1);

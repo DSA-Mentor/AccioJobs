@@ -5,7 +5,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), k = sc.nextInt();
         int[] lifetime = new int[k];
-        for (int i = 0; i < k; i++) lifetime[i] = sc.nextInt();
+        for (int i = 0; i < k; i++)
+            lifetime[i] = sc.nextInt();
         sc.close();
         System.out.println(maxRunTime(n, lifetime));
     }
@@ -33,7 +34,6 @@ public class Main {
             hi += time;
         }
         hi = hi / n;
-
 
         long pans = -1;
         while (lo <= hi) {

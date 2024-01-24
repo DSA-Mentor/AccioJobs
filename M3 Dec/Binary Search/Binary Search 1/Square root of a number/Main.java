@@ -27,9 +27,9 @@ class Main {
         System.out.println(pans);
     }
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-	    int A = sc.nextInt();
-    	sqrt(A);
+        int A = sc.nextInt();
+        sqrt(A);
     }
 }

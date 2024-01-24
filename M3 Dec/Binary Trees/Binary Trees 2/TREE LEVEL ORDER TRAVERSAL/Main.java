@@ -7,7 +7,8 @@ class TreeNode {
     TreeNode left;
     TreeNode right;
 
-    TreeNode() {}
+    TreeNode() {
+    }
 
     TreeNode(int val) {
         this.val = val;
@@ -62,11 +63,11 @@ class BST {
 
         while (que.size() != 0) {
             int size = que.size();
-            while (size-->0) {
+            while (size-- > 0) {
                 TreeNode rnode = que.remove();
 
                 System.out.print(rnode.val + " ");
-                
+
                 if (rnode.left != null) {
                     que.add(rnode.left);
                 }

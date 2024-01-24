@@ -8,6 +8,7 @@ class Node {
     int data;
     Node left;
     Node right;
+
     Node(int data) {
         this.data = data;
         left = null;
@@ -69,7 +70,7 @@ class Solution {
         if (root == null) {
             return;
         }
-        
+
         // print inorder of the left subtree
         inorderTraversal(root.left);
 

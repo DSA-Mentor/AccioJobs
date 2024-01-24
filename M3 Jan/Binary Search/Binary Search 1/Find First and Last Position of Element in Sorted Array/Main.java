@@ -20,20 +20,20 @@ public class Main {
 
         return fo;
     }
-    
-    public static void findPosition(int a[], int n,int k) {
+
+    public static void findPosition(int a[], int n, int k) {
         // Write code here
     }
-    
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n= sc.nextInt();
-        int k= sc.nextInt();
+        int n = sc.nextInt();
+        int k = sc.nextInt();
         int array[] = new int[n];
 
-        for(int i=0; i<n; i++){
-            array[i]= sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            array[i] = sc.nextInt();
         }
-        findPosition(array,n,k);
+        findPosition(array, n, k);
     }
 }

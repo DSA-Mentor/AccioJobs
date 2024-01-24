@@ -36,7 +36,7 @@ public class Main {
             return list.size();
         }
     }
-    
+
     public static void main(String[] args) {
         MyStack st = new MyStack();
 
@@ -46,7 +46,7 @@ public class Main {
         st.push(40);
         st.push(5);
 
-        // get topmost element 
+        // get topmost element
         System.out.println("topmost element: " + st.peek());
 
         // size of the stacj

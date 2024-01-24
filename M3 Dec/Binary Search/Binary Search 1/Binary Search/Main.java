@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
     public static int findIndex(int key, int[] arr) {
-        //Write code here
+        // Write code here
         int lo = 0;
         int hi = arr.length - 1;
 

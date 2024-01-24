@@ -21,13 +21,13 @@ class Main {
         if (str.length() == 0 || str.charAt(0) == 'N') {
             return null;
         }
-        
+
         String ip[] = str.split(" ");
         Node root = new Node(Integer.parseInt(ip[0]));
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
         int i = 1;
-        
+
         while (queue.size() > 0 && i < ip.length) {
             Node currNode = queue.peek();
             queue.remove();
@@ -46,7 +46,7 @@ class Main {
             }
             i++;
         }
-        
+
         return root;
     }
 
@@ -71,7 +71,7 @@ class Solution {
         if (root == null) {
             return;
         }
-        
+
         // print root's data
         System.out.print(root.data + " ");
 

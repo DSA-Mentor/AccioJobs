@@ -3,9 +3,9 @@ import java.util.*;
 
 class Solution {
     public int peakIndexInMountainArray(int[] arr) {
-       //Write your code here
+        // Write your code here
         int n = arr.length;
-        
+
         int lo = 0;
         int hi = n - 1;
 
@@ -49,7 +49,7 @@ public class Main {
         int n;
         n = sc.nextInt();
         int arr1[] = new int[n];
-        for(int i=0;i<n;i++)
+        for (int i = 0; i < n; i++)
             arr1[i] = sc.nextInt();
         Solution Obj = new Solution();
         int result = Obj.peakIndexInMountainArray(arr1);

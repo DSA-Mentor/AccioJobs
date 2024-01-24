@@ -7,6 +7,7 @@ class Node {
     int data;
     Node left;
     Node right;
+
     Node(int data) {
         this.data = data;
         left = null;
@@ -25,7 +26,7 @@ class Main {
         String ip[] = str.split(" ");
         Node root = new Node(Integer.parseInt(ip[0]));
 
-        Queue < Node > queue = new LinkedList < > ();
+        Queue<Node> queue = new LinkedList<>();
 
         queue.add(root);
 
@@ -60,6 +61,7 @@ class Main {
 
         return root;
     }
+
     static void printInorder(Node root) {
         if (root == null)
             return;
@@ -94,12 +96,12 @@ class Solution {
         if (root == null) {
             return;
         }
-        
+
         flatten(root.left);
         flatten(root.right);
 
         Node rightFlattenTree = root.right;
-        
+
         root.right = root.left;
         root.left = null;
 

@@ -14,11 +14,11 @@ public class Main {
 
         // size of the queue
         System.out.println("size: " + que.size());
-        
+
         // get head of the queue
         System.out.println("head: " + que.peek());
 
         // remove people
         System.out.println("remove head: " + que.remove());
-    }    
+    }
 }

@@ -47,7 +47,7 @@ public class Main {
         printArray(arr);
 
         int target = 1041;
-        
+
         int lo = 0;
         int hi = 1;
         int steps = 0;
@@ -69,5 +69,5 @@ public class Main {
         }
 
         System.out.println(-1);
-    }    
+    }
 }

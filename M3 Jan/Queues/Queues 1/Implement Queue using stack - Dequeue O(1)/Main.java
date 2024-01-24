@@ -1,17 +1,15 @@
 import java.io.*;
 import java.util.*;
 
-class StackQueue
-{
+class StackQueue {
     Stack<Integer> mainStack = new Stack<>();
     Stack<Integer> auxStack = new Stack<>();
 
     // TC: O(N)
-    //Function to push an element in queue by using 2 stacks.
-    void Push(int x)
-    {
-    	//Write your code here
-    	while (mainStack.size() != 0) {
+    // Function to push an element in queue by using 2 stacks.
+    void Push(int x) {
+        // Write your code here
+        while (mainStack.size() != 0) {
             auxStack.push(mainStack.pop());
         }
 
@@ -23,37 +21,34 @@ class StackQueue
     }
 
     // TC: O(1)
-    //Function to pop an element from queue by using 2 stacks.
-    int Pop()
-    {
-    	//Write your code here
-    	if (mainStack.size() != 0) {
+    // Function to pop an element from queue by using 2 stacks.
+    int Pop() {
+        // Write your code here
+        if (mainStack.size() != 0) {
             return mainStack.pop();
         } else {
             return -1;
         }
     }
 }
+
 public class Main {
     public static void main(String args[]) throws IOException {
-        Scanner sc = new Scanner(System.in);  
-        StackQueue s = new StackQueue();	
+        Scanner sc = new Scanner(System.in);
+        StackQueue s = new StackQueue();
         int q = sc.nextInt();
-        ArrayList<Integer> ans= new ArrayList<>();
-        while(q>0)
-        {
+        ArrayList<Integer> ans = new ArrayList<>();
+        while (q > 0) {
             int QueryType = sc.nextInt();
-            if(QueryType == 1)
-            {
+            if (QueryType == 1) {
                 int a = sc.nextInt();
                 s.Push(a);
-            }
-            else if(QueryType == 2)
-            ans.add(s.Pop());
-        q--;
-        }	
-        for(int x:ans)
-        System.out.print(x+" ");       
-     System.out.println();
+            } else if (QueryType == 2)
+                ans.add(s.Pop());
+            q--;
+        }
+        for (int x : ans)
+            System.out.print(x + " ");
+        System.out.println();
     }
 }

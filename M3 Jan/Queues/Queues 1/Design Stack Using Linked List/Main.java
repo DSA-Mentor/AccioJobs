@@ -4,7 +4,7 @@ class Node {
     int data;
     Node link;
 
-    Node (int data) {
+    Node(int data) {
         this.data = data;
         this.link = null;
     }
@@ -46,9 +46,10 @@ class Main {`
 }
 
 class StackUsingLinkedlist {
-	Node top;
-	StackUsingLinkedlist() { 
-        this.top = null; 
+    Node top;
+
+    StackUsingLinkedlist() {
+        this.top = null;
     }
 
     private void addFirstInLinkedList(Node node) {
@@ -62,8 +63,8 @@ class StackUsingLinkedlist {
         top = temp;
     }
 
-	public void push(int x) {
-		//Complete the function
+    public void push(int x) {
+        // Complete the function
         Node node = new Node(x);
 
         if (top == null) {
@@ -72,28 +73,28 @@ class StackUsingLinkedlist {
         } else {
             addFirstInLinkedList(node);
         }
-	}
+    }
 
-	public int peek() {
-		//Complete the function
+    public int peek() {
+        // Complete the function
         if (top == null) {
             return -1;
         } else {
             return top.data;
         }
-	}
+    }
 
-	public void pop() {
-		//Complete the function
+    public void pop() {
+        // Complete the function
         if (top == null) {
             return;
         } else {
             removeFirstLinkedList();
         }
-	}
+    }
 
-	public Node display() {
-		//Complete the function
+    public Node display() {
+        // Complete the function
         return top;
-	}
+    }
 }

@@ -11,23 +11,24 @@ class Solution {
 
             // if asteroid is moving toward right, no one from known universe can attack me
             /**
-                known universe.     unknown univers
-                      o->                 o->
-                    <-o                   o->
+             * known universe. unknown univers
+             * o-> o->
+             * <-o o->
              */
             // hence no collision, insert in known universe
             if (asteroid > 0) {
                 st.push(asteroid);
-            } 
+            }
             // asteroid is moving towards left
             else {
                 /**
-                    known universe.     unknown univers
-                      o->                    <-o
-                    <-o                      <-o
+                 * known universe. unknown univers
+                 * o-> <-o
+                 * <-o <-o
                  */
 
-                // lets try to eleminate all the smaller asteroids than me from known universe moving towards right
+                // lets try to eleminate all the smaller asteroids than me from known universe
+                // moving towards right
                 while (st.size() > 0 && st.peek() > 0 && st.peek() < Math.abs(asteroid)) {
                     // I can destroy them
                     st.pop();
@@ -36,9 +37,9 @@ class Solution {
                 // if topmost asteroid is moving towards left
                 if (st.size() > 0 && st.peek() < 0) {
                     st.push(asteroid);
-                } 
+                }
                 // if topmost asteroid is moving towards right and is equal to me
-                else if (st.size() > 0 && st.peek() > 0 && st.peek() == Math.abs(asteroid)){
+                else if (st.size() > 0 && st.peek() > 0 && st.peek() == Math.abs(asteroid)) {
                     st.pop();
                 }
                 // if topmost asteroid is moving towards right and is greater to me

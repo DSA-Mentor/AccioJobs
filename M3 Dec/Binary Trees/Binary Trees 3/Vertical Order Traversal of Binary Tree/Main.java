@@ -8,6 +8,7 @@ class TreeNode {
     int data;
     TreeNode left;
     TreeNode right;
+
     TreeNode(int data) {
         this.data = data;
         left = null;
@@ -45,12 +46,12 @@ class Solution {
             if (this.vLevel == o.vLevel) {
                 return this.node.data - o.node.data;
             }
-            
+
             return this.vLevel - o.vLevel;
         }
     }
-    
-    List < List < Integer >> VerticalTraversal(TreeNode root) {
+
+    List<List<Integer>> VerticalTraversal(TreeNode root) {
         getPos(root, 0);
 
         int noOfVLevel = rightMostPos - leftMostPos + 1;
@@ -63,8 +64,7 @@ class Solution {
         for (int i = 0; i < noOfVLevel; i++) {
             vv.add(new ArrayList<>());
         }
-        
-        
+
         while (MQue.size() != 0) {
             int size = MQue.size();
             PriorityQueue<Pair> CQue = new PriorityQueue<>();
@@ -101,7 +101,7 @@ class Main {
 
         String ip[] = str.split(" ");
         TreeNode root = new TreeNode(Integer.parseInt(ip[0]));
-        Queue < TreeNode > queue = new LinkedList < > ();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         int i = 1;
         while (queue.size() > 0 && i < ip.length) {
@@ -132,9 +132,9 @@ class Main {
             String s = br.readLine();
             TreeNode root = buildTree(s);
             Solution ob = new Solution();
-            List < List < Integer >> ans = ob.VerticalTraversal(root);
+            List<List<Integer>> ans = ob.VerticalTraversal(root);
             for (int i = 0; i < ans.size(); i++) {
-                for (int a: ans.get(i)) {
+                for (int a : ans.get(i)) {
                     System.out.print(a + " ");
                 }
                 System.out.println();

@@ -22,7 +22,8 @@ class Main {
                 queue.add(currNode.left);
             }
             i++;
-            if (i >= ip.length) break;
+            if (i >= ip.length)
+                break;
             currVal = ip[i];
             if (!currVal.equals("-1")) {
                 currNode.right = new Node(Integer.parseInt(currVal));
@@ -41,7 +42,7 @@ class Main {
         int x = sc.nextInt();
         int y = sc.nextInt();
         Solution g = new Solution();
-        Node ans = g.findLCA(root,x,y);
+        Node ans = g.findLCA(root, x, y);
         System.out.println(ans.data);
     }
 }
@@ -50,6 +51,7 @@ class Node {
     int data;
     Node left;
     Node right;
+
     Node(int data) {
         this.data = data;
         left = null;
@@ -82,8 +84,8 @@ class Solution {
 
         return null;
     }
-    
-    public static Node findLCA(Node root,int n1,int n2) {
+
+    public static Node findLCA(Node root, int n1, int n2) {
         // write code here
         ArrayList<Node> n2rn1 = new ArrayList<>();
         find(root, n1, n2rn1);

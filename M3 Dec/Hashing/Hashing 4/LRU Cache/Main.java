@@ -32,14 +32,14 @@ class Node {
     Node next;
     Node prev;
 
-    Node (int key, int data) {
+    Node(int key, int data) {
         this.key = key;
         this.data = data;
         this.next = null;
         this.prev = null;
     }
 
-    Node () {
+    Node() {
         this.next = null;
         this.prev = null;
     }
@@ -52,8 +52,8 @@ class LRUCache {
     int limit;
 
     HashMap<Integer, Node> map;
-    
-    public LRUCache (int capacity) {
+
+    public LRUCache(int capacity) {
         // your code here
         head = new Node();
         tail = new Node();
@@ -67,7 +67,7 @@ class LRUCache {
     }
 
     // TC: O(1), SC: O(1)
-    public void addLast (Node node) {
+    public void addLast(Node node) {
         Node prevNode = tail.prev;
 
         node.next = tail;
@@ -78,7 +78,7 @@ class LRUCache {
     }
 
     // TC: O(1), SC: O(1)
-    public void removeNode (Node node) {
+    public void removeNode(Node node) {
         Node prevNode = node.prev;
         Node nextNode = node.next;
 
@@ -90,7 +90,7 @@ class LRUCache {
     }
 
     // TC: O(1), SC: O(1)
-    public void moveToLast (Node node) {
+    public void moveToLast(Node node) {
         removeNode(node);
         addLast(node);
     }
@@ -100,7 +100,7 @@ class LRUCache {
         if (map.containsKey(key) == false) {
             return -1;
         }
-        
+
         Node node = map.get(key);
         moveToLast(node);
         return node.data;

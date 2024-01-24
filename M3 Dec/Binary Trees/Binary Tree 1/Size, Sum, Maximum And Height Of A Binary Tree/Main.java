@@ -36,8 +36,7 @@ class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br =
-            new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s1 = br.readLine();
         Node root1 = buildTree(s1);
         Solution g = new Solution();
@@ -52,6 +51,7 @@ class Node {
     int data;
     Node left;
     Node right;
+
     Node(int data) {
         this.data = data;
         left = null;
@@ -62,7 +62,7 @@ class Node {
 class Solution {
     // Faith: return size of the tree starting from the root
     public int sizeOfTree(Node root) {
-        // base base 
+        // base base
         if (root == null) {
             return 0;
         }
@@ -72,7 +72,7 @@ class Solution {
 
         // get size of the right subtree
         int rightSize = sizeOfTree(root.right);
-        
+
         // overall size of the tree = size of LST + 1 (for root) + size of RST
         return leftSize + 1 + rightSize;
     }
@@ -83,7 +83,7 @@ class Solution {
         if (root == null) {
             return 0;
         }
-        
+
         // get the sum of left subtree
         int leftSum = sumOfTree(root.left);
 
@@ -100,7 +100,7 @@ class Solution {
         if (root == null) {
             return Integer.MIN_VALUE;
         }
-        
+
         // get maximum value in left subtree
         int leftMax = maxOfTree(root.left);
 
@@ -118,7 +118,7 @@ class Solution {
         if (root == null) {
             return 0;
         }
-        
+
         // get height of left subtree
         int leftHeight = heightOfTree(root.left);
 

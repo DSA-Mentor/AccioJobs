@@ -1,7 +1,7 @@
 import java.util.*;
 
-class Solution{
-    public static int longestSubarray(int[] arr){
+class Solution {
+    public static int longestSubarray(int[] arr) {
         // write code here
         HashMap<String, Integer> map = new HashMap<>();
 
@@ -16,9 +16,15 @@ class Solution{
         int maxLen = 0;
         for (int i = 0; i < arr.length; i++) {
             switch (arr[i]) {
-                case 0: x++; break;
-                case 1: y++; break;
-                case 2: z++; break;
+                case 0:
+                    x++;
+                    break;
+                case 1:
+                    y++;
+                    break;
+                case 2:
+                    z++;
+                    break;
             }
 
             code = (y - x) + "#" + (z - y);
@@ -43,7 +49,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = scn.nextInt();
         }
-        Solution Obj =  new Solution();
+        Solution Obj = new Solution();
         System.out.println(Obj.longestSubarray(arr));
     }
 }

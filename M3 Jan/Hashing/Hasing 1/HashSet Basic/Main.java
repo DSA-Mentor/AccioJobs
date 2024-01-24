@@ -33,5 +33,5 @@ public class Main {
 
         // size of the hashset
         System.out.println("size: " + mySet.size());
-    }    
+    }
 }

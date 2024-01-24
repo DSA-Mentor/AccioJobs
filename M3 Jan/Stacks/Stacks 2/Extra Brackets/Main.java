@@ -42,8 +42,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String exp = br.readLine();
-	    Solution Obj = new Solution();
-        if(Obj.ExtraBrackets(exp))
+        Solution Obj = new Solution();
+        if (Obj.ExtraBrackets(exp))
             System.out.println("true");
         else
             System.out.println("false");

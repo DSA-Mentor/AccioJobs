@@ -7,6 +7,7 @@ class Node {
     int data;
     Node left;
     Node right;
+
     Node(int data) {
         this.data = data;
         left = null;
@@ -21,7 +22,7 @@ class Main {
         }
         String ip[] = str.split(" ");
         Node root = new Node(Integer.parseInt(ip[0]));
-        Queue < Node > queue = new LinkedList < > ();
+        Queue<Node> queue = new LinkedList<>();
         queue.add(root);
         int i = 1;
         while (queue.size() > 0 && i < ip.length) {
@@ -53,7 +54,7 @@ class Main {
         int b = sc.nextInt();
         Node root = buildTree(s);
         Solution tree = new Solution();
-        ArrayList < Integer > ans = tree.solve(root, b);
+        ArrayList<Integer> ans = tree.solve(root, b);
         for (int i = 0; i < ans.size(); i++)
             System.out.print(ans.get(i) + " ");
 
@@ -68,7 +69,7 @@ class Solution {
     public Node find(Node root, int tar, ArrayList<Integer> n2r) {
         if (root == null) {
             return null;
-        }   
+        }
 
         if (root.data == tar) {
             n2r.add(root.data);
@@ -91,8 +92,8 @@ class Solution {
 
         return null;
     }
-    
-    public ArrayList < Integer > solve(Node root, int b) {
+
+    public ArrayList<Integer> solve(Node root, int b) {
         // your code here
         ArrayList<Integer> n2r = new ArrayList<>();
         find(root, b, n2r);

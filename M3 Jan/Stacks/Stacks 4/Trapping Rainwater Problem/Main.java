@@ -4,29 +4,29 @@ import java.util.*;
 class Solution {
     // // TC: O(N), SC: O(N)
     // public void TappingWater(int[] arr, int n) {
-    //     int[] lmax = new int[n];
-    //     lmax[0] = 0;
-    //     for (int i = 1; i < n; i++) {
-    //         lmax[i] = Math.max(lmax[i - 1], arr[i]);
-    //     }
+    // int[] lmax = new int[n];
+    // lmax[0] = 0;
+    // for (int i = 1; i < n; i++) {
+    // lmax[i] = Math.max(lmax[i - 1], arr[i]);
+    // }
 
-    //     int[] rmax = new int[n];
-    //     rmax[n - 1] = 0;
-    //     for (int i = n - 2; i >= 0; i--) {
-    //         rmax[i] = Math.max(rmax[i + 1], arr[i]);
-    //     }
+    // int[] rmax = new int[n];
+    // rmax[n - 1] = 0;
+    // for (int i = n - 2; i >= 0; i--) {
+    // rmax[i] = Math.max(rmax[i + 1], arr[i]);
+    // }
 
-    //     // min of rmax and lmax in height of water
-    //     int waterStored = 0;
-    //     for (int i = 0; i < n; i++) {
-    //         int heightTillWaterCanGo = Math.min(lmax[i], rmax[i]);
+    // // min of rmax and lmax in height of water
+    // int waterStored = 0;
+    // for (int i = 0; i < n; i++) {
+    // int heightTillWaterCanGo = Math.min(lmax[i], rmax[i]);
 
-    //         if (heightTillWaterCanGo > arr[i]) {
-    //             waterStored = (heightTillWaterCanGo - arr[i]);
-    //         }
-    //     }
+    // if (heightTillWaterCanGo > arr[i]) {
+    // waterStored = (heightTillWaterCanGo - arr[i]);
+    // }
+    // }
 
-    //     return waterStored;
+    // return waterStored;
     // }
 
     // TC: O(N), SC: O(1)
@@ -67,19 +67,17 @@ class Solution {
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
-            int n= sc.nextInt();
-      	    int[] arr= new int[n];
 
-      	    for(int i=0;i<n;i++)
-                arr[i]=sc.nextInt();
-            
-        
-            Solution Obj = new Solution();
-            Obj.TappingWater(arr, n);
-            
-        
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++)
+            arr[i] = sc.nextInt();
+
+        Solution Obj = new Solution();
+        Obj.TappingWater(arr, n);
+
         sc.close();
-        
+
     }
 }

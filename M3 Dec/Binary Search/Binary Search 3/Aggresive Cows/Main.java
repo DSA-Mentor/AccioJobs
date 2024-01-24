@@ -16,9 +16,9 @@ class Solution {
 
         return numOfCowsPlaced >= cows;
     }
-    
-    public static int aggressiveCows(int a[],int cows){
-        //Write your code here
+
+    public static int aggressiveCows(int a[], int cows) {
+        // Write your code here
         Arrays.sort(a);
 
         int hi = a[a.length - 1] - a[0];
@@ -44,17 +44,16 @@ class Solution {
 }
 
 class Main {
-        public static void main(String args[]) {
+    public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		int k = sc.nextInt();
-		int[] nums = new int[n];
-		for (int i = 0; i < n; i++)
-		{
-			nums[i] = sc.nextInt();
-		}
-        Solution obj=new Solution();
-		System.out.println(obj.aggressiveCows(nums,k));
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int[] nums = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+        Solution obj = new Solution();
+        System.out.println(obj.aggressiveCows(nums, k));
 
     }
 }

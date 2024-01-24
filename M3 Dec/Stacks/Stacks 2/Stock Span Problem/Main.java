@@ -1,10 +1,11 @@
 import java.io.*;
 import java.util.*;
 
-class Pair{
+class Pair {
     int val;
     int idx;
-    Pair(int val, int idx){
+
+    Pair(int val, int idx) {
         this.val = val;
         this.idx = idx;
     }
@@ -15,24 +16,24 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
         int a[] = new int[n];
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             a[i] = input.nextInt();
         }
-        Solution s  = new Solution();
+        Solution s = new Solution();
         int ans[] = s.stockSpan(a);
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             System.out.print(ans[i] + " ");
         }
     }
 }
 
 class Solution {
-    static int[] nextGreaterElementOnLeftIndexwise (int[] a) {
+    static int[] nextGreaterElementOnLeftIndexwise(int[] a) {
         // Stack: people looking for there ngeli
         Stack<Integer> st = new Stack();
 
         int[] ngeli = new int[a.length];
-        
+
         // move: right to left
         for (int i = a.length - 1; i >= 0; i--) {
             int ele = a[i];
@@ -54,7 +55,7 @@ class Solution {
 
         return ngeli;
     }
-    
+
     static int[] stockSpan(int[] a) {
         int[] ngeli = nextGreaterElementOnLeftIndexwise(a);
 

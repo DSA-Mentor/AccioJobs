@@ -22,7 +22,8 @@ class Main {
                 queue.add(currNode.left);
             }
             i++;
-            if (i >= ip.length) break;
+            if (i >= ip.length)
+                break;
             currVal = ip[i];
             if (!currVal.equals("N")) {
                 currNode.right = new Node(Integer.parseInt(currVal));
@@ -35,7 +36,7 @@ class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s1 = br.readLine();
         Node root1 = buildTree(s1);
         Solution g = new Solution();
@@ -47,6 +48,7 @@ class Node {
     int data;
     Node left;
     Node right;
+
     Node(int data) {
         this.data = data;
         left = null;
@@ -69,11 +71,11 @@ class Solution {
             int size = que.size();
 
             ArrayList<Integer> currLevel = new ArrayList<>();
-            while (size-->0) {
+            while (size-- > 0) {
                 Node rnode = que.remove();
 
                 currLevel.add(rnode.data);
-                
+
                 if (rnode.left != null) {
                     que.add(rnode.left);
                 }
@@ -82,7 +84,7 @@ class Solution {
                     que.add(rnode.right);
                 }
             }
-            
+
             if (level % 2 == 0) {
                 for (int i = 0; i < currLevel.size(); i++) {
                     System.out.print(currLevel.get(i) + " ");
@@ -92,7 +94,7 @@ class Solution {
                     System.out.print(currLevel.get(i) + " ");
                 }
             }
-            
+
             level++;
         }
     }

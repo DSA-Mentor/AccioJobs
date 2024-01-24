@@ -3,7 +3,7 @@ import java.util.*;
 
 class Solution {
     public String minWindow(String s, String t) {
-		// write code here
+        // write code here
         HashMap<Character, Integer> freqMap2 = new HashMap<>();
         for (int i = 0; i < t.length(); i++) {
             char ch = t.charAt(i);
@@ -11,7 +11,7 @@ class Solution {
         }
 
         HashMap<Character, Integer> freqMap1 = new HashMap<>();
-        
+
         int dmcnt = t.length();
         int mcnt = 0;
 
@@ -68,10 +68,10 @@ class Solution {
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s,t;
+        String s, t;
         s = sc.next();
-		t = sc.next();
+        t = sc.next();
         Solution Obj = new Solution();
-        System.out.print(Obj.minWindow(s,t));
+        System.out.print(Obj.minWindow(s, t));
     }
 }

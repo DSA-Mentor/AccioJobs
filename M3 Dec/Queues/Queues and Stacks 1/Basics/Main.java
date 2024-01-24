@@ -22,7 +22,7 @@ public class Main {
         // System.out.println("Removed Element: " + que.remove());
         // System.out.println("Removed Element: " + que.remove());
         // System.out.println("Removed Element: " + que.remove());
-    
+
         // intitialize a queue using Linked List interface
         Queue<Integer> que = new LinkedList<>();
 

@@ -2,23 +2,23 @@ import java.util.*;
 
 class Solution {
     // public void allDuplicates(int n, int[] arr) {
-    //     // Write Your code here.
-    //     HashMap<Integer, Integer> freqMap = new HashMap<>();
-    //     ArrayList<Integer> dups = new ArrayList<>();
+    // // Write Your code here.
+    // HashMap<Integer, Integer> freqMap = new HashMap<>();
+    // ArrayList<Integer> dups = new ArrayList<>();
 
-    //     for (int num : arr) {
-    //         int prevFreq = freqMap.getOrDefault(num, 0);
-    //         freqMap.put(num, prevFreq + 1);
+    // for (int num : arr) {
+    // int prevFreq = freqMap.getOrDefault(num, 0);
+    // freqMap.put(num, prevFreq + 1);
 
-    //         if (freqMap.get(num) >= 2) {
-    //             dups.add(num);
-    //         }
-    //     }
+    // if (freqMap.get(num) >= 2) {
+    // dups.add(num);
+    // }
+    // }
 
-    //     for (int num : dups) {
-    //         System.out.print(num + " ");
-    //     }
-    //     System.out.println();
+    // for (int num : dups) {
+    // System.out.print(num + " ");
+    // }
+    // System.out.println();
     // }
 
     public void allDuplicates(int n, int[] arr) {
