@@ -1,0 +1,93 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] arr = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        Solution obj = new Solution();
+
+        System.out.println(obj.orangesRotting(arr));
+    }
+}
+
+class Solution {
+    static class Pair {
+        int row;
+        int col;
+
+        Pair(int row, int col) {
+            this.row = row;
+            this.col = col;
+        }
+    }
+
+    public static int orangesRotting(int[][] grid) {
+        int n = grid.length;
+        int m = grid[0].length;
+
+        Queue<Pair> que = new ArrayDeque<>();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (grid[i][j] == 2) {
+                    que.add(new Pair(i, j));
+                }
+            }
+        }
+
+        int level = 0;
+        while (que.size() != 0) {
+            int size = que.size();
+            while (size-- > 0) {
+                Pair rpair = que.remove();
+                int rr = rpair.row;
+                int rc = rpair.col;
+
+                if (rr - 1 >= 0 && grid[rr - 1][rc] == 1) {
+                    // upwards
+                    grid[rr - 1][rc] = 2;
+                    que.add(new Pair(rr - 1, rc));
+                }
+                if (rc + 1 < m && grid[rr][rc + 1] == 1) {
+                    // right
+                    grid[rr][rc + 1] = 2;
+                    que.add(new Pair(rr, rc + 1));
+                }
+                if (rr + 1 < n && grid[rr + 1][rc] == 1) {
+                    // down
+                    grid[rr + 1][rc] = 2;
+                    que.add(new Pair(rr + 1, rc));
+                }
+                if (rc - 1 >= 0 && grid[rr][rc - 1] == 1) {
+                    // right
+                    grid[rr][rc - 1] = 2;
+                    que.add(new Pair(rr, rc - 1));
+                }
+            }
+            level++;
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (grid[i][j] == 1) {
+                    return -1;
+                }
+            }
+        }
+
+        if (level == 0) {
+            return 0;
+        }
+
+        return level - 1;
+    }
+}
