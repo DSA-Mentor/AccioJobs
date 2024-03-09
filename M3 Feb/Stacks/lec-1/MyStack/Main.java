@@ -8,12 +8,12 @@ public class Main {
         MyStack() {
             stack = new ArrayList<>();
         }
-        
+
         // TC: O(1)
         void push(int ele) {
             stack.add(ele);
-        } 
-        
+        }
+
         // TC: O(1)
         int pop() {
             if (stack.size() != 0) {
@@ -43,7 +43,7 @@ public class Main {
 
     public static void main(String[] args) {
         MyStack st = new MyStack();
-        
+
         // add some ele
         st.push(10);
         st.push(20);
@@ -64,5 +64,5 @@ public class Main {
 
         // topmost person of the stack
         System.out.println("topmost: " + st.peek());
-    }    
+    }
 }

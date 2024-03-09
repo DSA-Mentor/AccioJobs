@@ -35,7 +35,7 @@ public class Main {
         }
         System.out.println();
 
-        // search 
+        // search
         if (set.contains(10) == true) {
             System.out.println("Found " + 10 + " in set");
         } else {

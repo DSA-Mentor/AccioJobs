@@ -4,7 +4,7 @@ public class Main {
         Node left;
         Node right;
     }
-    
+
     public Node find(Node root, int target) {
         if (root == null) {
             return null;
@@ -22,13 +22,12 @@ public class Main {
             return filc;
         }
 
-
         // try to find in right child
         Node firc = find(root.right, target);
 
         if (firc != null) {
             return firc;
-        } 
+        }
 
         return null;
     }

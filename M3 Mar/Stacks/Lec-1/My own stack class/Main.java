@@ -38,13 +38,13 @@ public class Main {
                 return removeEle;
             }
         }
-        
+
         // size of the stack
         int size() {
             return this.size;
         }
     }
-    
+
     public static void main(String[] args) {
         MyStack st = new MyStack();
 

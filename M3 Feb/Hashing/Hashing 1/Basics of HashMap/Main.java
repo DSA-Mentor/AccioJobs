@@ -62,7 +62,7 @@ public class Main {
             System.out.println("Key: " + key + " Value: " + value);
         }
 
-        // remove based on key 
+        // remove based on key
         map.remove("Yogurt");
 
         // size of hashMap (number of keys)
@@ -90,5 +90,5 @@ public class Main {
 
         // getOrDefault
         System.out.println("getOrDefault " + map.getOrDefault("Lays", -1));
-    }    
+    }
 }
