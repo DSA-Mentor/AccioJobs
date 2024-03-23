@@ -1,4 +1,4 @@
-package M3 Mar.Binary Search.lec-2.Rotated Sorted Array Search;
+package M3 Mar.Binary Search.lec-2. Rotated Sorted Array Search;
 
 public class Main {
     

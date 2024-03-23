@@ -10,7 +10,7 @@ public class Basics {
         // initialize a queue approach 2
         Queue<Integer> que = new LinkedList<>();
 
-        // add elements 
+        // add elements
         que.add(10);
         que.add(20);
         que.add(30);
@@ -27,5 +27,5 @@ public class Basics {
         // remove ele from queue
         System.out.println("removed: " + que.remove());
         System.out.println("removed: " + que.poll());
-    }    
+    }
 }
