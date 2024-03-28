@@ -28,7 +28,7 @@ public class Main {
 
         System.out.println();
 
-        // update 
+        // update
         int currEggs = cart.get("Eggs");
         cart.put("Eggs", currEggs + 5);
 
@@ -73,5 +73,5 @@ public class Main {
         if (cart.containsKey("Oranges") == true) {
             System.out.println("true");
         }
-    }    
+    }
 }
